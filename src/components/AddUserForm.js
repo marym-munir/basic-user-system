@@ -28,14 +28,12 @@ const AddUserForm = (props) => {
           props.newUser(user);
           setUser(clearForm);
         }}
-      >
+      > 
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Name:</label>
           <input
             type="text"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="Enter Name"
             value={user.name}
             onChange={handleInput}
@@ -47,7 +45,7 @@ const AddUserForm = (props) => {
           <input
             type="email"
             className="form-control"
-            id="exampleInputPassword1"
+            
             placeholder="Enter Email"
             value={user.email}
             onChange={handleInput}
@@ -72,7 +70,11 @@ const AddUserForm = (props) => {
         </button>
       </form>
       {/* <input onChange={(event) => console.log(event.target.value)} name="one" /> */}
+
+     
     </div>
+
+    
   );
 };
 

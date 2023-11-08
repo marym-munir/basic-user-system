@@ -12,21 +12,38 @@ const UserData = (props) => {
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">User Name</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
 
-        {props.allUserData.map((user) => {
-          return (
-            <tbody>
-              <tr>
-                <th scope="row">{user.id}</th>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.userName}</td>
-              </tr>
-            </tbody>
-          );
-        })}
+        {props.allUserData.length > 0 ? (
+          props.allUserData.map((user) => {
+            return (
+              <tbody>
+                <tr>
+                  <th scope="row">{user.id}</th>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.userName}</td>
+                  <td>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => props.dltUser(user.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            );
+          })
+        ) : (
+          <tbody>
+            <tr>
+              <td colSpan={4}>No User Found</td>
+            </tr>
+          </tbody>
+        )}
       </table>
     </div>
   );
